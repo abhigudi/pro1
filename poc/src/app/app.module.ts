@@ -16,7 +16,7 @@ const route: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(route),
+    RouterModule.forRoot(route, {useHash: true}),
     CommonModules
   ],
   providers: [],
