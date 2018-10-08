@@ -1,9 +1,11 @@
 
 <div class="d-flex flex-row">
     <app-leftnav >ss</app-leftnav>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column flex-grow-1">
         <app-header></app-header>
-        <router-outlet></router-outlet>
+        <div class="d-flex flex-column flex-grow-1">
+                <router-outlet ></router-outlet>
+        </div>
         <app-footer></app-footer>
     </div>
 </div>

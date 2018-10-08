@@ -1,6 +1,27 @@
 
-<div class="leftnav-container">
-  <p>
-    leftnav works!
-  </p>
+<div class="leftnav-root-container" >
+    <div class="leftnav-container d-flex flex-column">
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of menuItem" (mouseover)="level1menu = item.children" [routerLink]="[item.link]" >
+          <i class="menu-item-icon {{item.menuIcon}}"></i>
+          <div class="menu-item-string">{{item.menuString}}</div>
+          <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
+        </div>
+    </div>
+    
+    <div class="leftnav-container2 d-flex flex-column" *ngIf="level1menu" >
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level1menu" (mouseover)="level2menu = item.children"  >
+            <i class="menu-item-icon {{item.menuIcon}}"></i>
+            <div class="menu-item-string">{{item.menuString}}</div>
+            <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
+        </div>
+    </div>
+    
+    <div class="leftnav-container3 d-flex flex-column" *ngIf="level2menu" >
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level2menu">
+            <i class="menu-item-icon {{item.menuIcon}}"></i>
+            <div class="menu-item-string">{{item.menuString}}</div>
+            <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
+        </div>
+    </div>
+    
 </div>

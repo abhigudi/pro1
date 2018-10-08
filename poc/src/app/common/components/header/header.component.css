@@ -1,1 +1,10 @@
 
+.header-box{
+    background: #C0C0C0;
+    height: 40px;
+}
+
+.header-icon-size{
+    font-size: 20px;
+    padding: 10px;
+}

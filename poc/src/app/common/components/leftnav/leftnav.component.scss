@@ -1,0 +1,57 @@
+
+
+$menu-width: 150px ;
+
+.leftnav-container{
+    width: 40px;
+    height: 100vh;
+    background: #0067C5;
+    overflow: hidden;
+    border-right: 1px solid #1E4A93;
+}
+
+.leftnav-container2{
+    width: $menu-width;
+    height: 100vh;
+    background: #0067C5;
+    overflow: hidden;
+    position: absolute;
+    left: 150px;
+}
+
+.leftnav-container3{
+    width: $menu-width;
+    height: 100vh;
+    background: #0067C5;
+    overflow: hidden;
+    position: absolute;
+    left: 300px;
+}
+
+.leftnav-root-container:hover .leftnav-container{
+    width: $menu-width;
+    position: absolute;
+}
+
+.menu-item-box{
+    padding: 5px;
+    border-bottom: 1px solid #173E77;
+}
+
+.menu-item-box:hover{
+    background: #1E4A93;
+    cursor: pointer;
+}
+
+.menu-item-icon{
+    padding: 0px 6px;
+    margin-top: 4px;
+}
+.menu-item-string{
+    padding: 0px 6px;
+}
+
+.menu-right-arrow{
+    padding-left: 45px;
+    margin-top: 4px;
+}
