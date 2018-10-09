@@ -16,4 +16,19 @@ export class LeftnavComponent implements OnInit {
   ngOnInit() {
   }
 
+  setlevel1menu(item){
+    this.level1menu = item;
+    this.level2menu = null;
+  }
+
+  setlevel2menu(item){
+    this.level2menu = item
+  }
+
+  resetAllMenuLevel(){
+    this.level1menu = null;
+    this.level2menu = null;
+  }
+  
+
 }

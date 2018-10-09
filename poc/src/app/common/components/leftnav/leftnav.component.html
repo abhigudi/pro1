@@ -1,7 +1,7 @@
 
 <div class="leftnav-root-container" (mouseleave)="level1menu=null;level2menu=null;">
     <div class="leftnav-container d-flex flex-column">
-        <div class="menu-item-box d-flex flex-row" *ngFor="let item of menuItem" (mouseover)="level1menu = item.children" [routerLink]="[item.link]" >
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of menuItem" (mouseover)="setlevel1menu(item.children)" [routerLink]="[item.link]" (click)="resetAllMenuLevel()" >
           <i class="menu-item-icon {{item.menuIcon}}"></i>
           <div class="menu-item-string">{{item.menuString}}</div>
           <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
@@ -9,7 +9,7 @@
     </div>
     
     <div class="leftnav-container2 d-flex flex-column" *ngIf="level1menu" >
-        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level1menu" (mouseover)="level2menu = item.children" [routerLink]="[item.link]" >
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level1menu" (mouseover)="setlevel2menu(item.children)" [routerLink]="[item.link]"   (click)="resetAllMenuLevel()" >
             <i class="menu-item-icon {{item.menuIcon}}"></i>
             <div class="menu-item-string">{{item.menuString}}</div>
             <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
@@ -17,7 +17,7 @@
     </div>
     
     <div class="leftnav-container3 d-flex flex-column" *ngIf="level2menu" >
-        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level2menu">
+        <div class="menu-item-box d-flex flex-row" *ngFor="let item of level2menu"  (click)="resetAllMenuLevel()" >
             <i class="menu-item-icon {{item.menuIcon}}"></i>
             <div class="menu-item-string">{{item.menuString}}</div>
             <i *ngIf="item.children" class="fas fa-angle-right menu-right-arrow"></i>
