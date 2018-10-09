@@ -6,8 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModules } from 'src/app/common/common.module';
 
 const route: Routes = [
-  { path: 'page1', loadChildren: 'src/app/modules/page1/page1.module#Page1Module'},
-  { path: 'page2', loadChildren: 'src/app/modules/page2/page2.module#Page2Module'}
+  { path: 'page1', loadChildren: 'src/app/pages/page1/page1.module#Page1Module'},
+  { path: 'page2', loadChildren: 'src/app/pages/page2/page2.module#Page2Module'}
 ]
 
 @NgModule({
