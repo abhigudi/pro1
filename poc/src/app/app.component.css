@@ -1,1 +1,8 @@
 
+.vh100{
+    height: 100vh;
+}
+
+.offset-from-menubar{
+    padding-left: 40px; 
+}
