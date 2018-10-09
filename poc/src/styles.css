@@ -3,3 +3,7 @@
 .page-padding{
     padding: 10px;
 }
+
+.hand-cursor{
+    cursor: pointer;
+}

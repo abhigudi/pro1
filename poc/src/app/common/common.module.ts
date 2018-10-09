@@ -6,6 +6,7 @@ import { LeftnavComponent } from './components/leftnav/leftnav.component';
 import { RouterModule } from '@angular/router';
 import {TableModule} from 'primeng/table';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import { DataTableComponent } from './components/data-table/data-table.component
     RouterModule,
     TableModule
   ],
-  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent ],
-  exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent ]
+  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ],
+  exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ]
 })
 export class CommonModules { }
