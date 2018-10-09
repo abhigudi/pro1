@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LeftnavComponent } from './components/leftnav/leftnav.component';
 import { RouterModule } from '@angular/router';
 import {TableModule} from 'primeng/table';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import {TableModule} from 'primeng/table';
     RouterModule,
     TableModule
   ],
-  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent ],
-  exports: [ HeaderComponent, FooterComponent, LeftnavComponent ]
+  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent ],
+  exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent ]
 })
 export class CommonModules { }

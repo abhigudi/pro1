@@ -1,0 +1,18 @@
+
+<div class="page-padding">
+<p-table [value]="rows">
+  <ng-template pTemplate="header">
+      <tr>
+          <th *ngFor="let head of header" [pSortableColumn]="head.sortable? head.mappingKey:null">
+            {{head.label}}
+            <p-sortIcon *ngIf="head.sortable" [field]="head.mappingKey"></p-sortIcon>
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+      <tr>
+          <td *ngFor="let head of header">{{car[head.mappingKey]}}</td>
+      </tr>
+  </ng-template>
+</p-table>
+</div>

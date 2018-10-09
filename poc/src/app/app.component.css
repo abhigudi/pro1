@@ -6,3 +6,8 @@
 .offset-from-menubar{
     padding-left: 40px; 
 }
+
+.left-menu-position{
+    position: absolute;
+    z-index: 2;
+}
