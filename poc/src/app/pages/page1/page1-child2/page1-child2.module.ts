@@ -6,7 +6,8 @@ import { Page1Child2Subchild1Component } from './page1-child2-subchild1/page1-ch
 
 const route: Routes = [
   { path: '', component: Page1Child2Component, children:[
-    { path: 'sub-child1', component: Page1Child2Subchild1Component}
+    { path: 'sub-child1', component: Page1Child2Subchild1Component},
+    { path: 'subpage-common', loadChildren: 'src/app/pages/subpage-common/subpage-common.module#SubpageCommonModule'},
   ] }
 ]
 @NgModule({
