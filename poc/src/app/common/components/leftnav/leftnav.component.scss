@@ -8,6 +8,7 @@ $menu-width: 150px ;
     background: #0067C5;
     overflow: hidden;
     border-right: 1px solid #1E4A93;
+    transition: 0.5s;
 }
 
 .leftnav-container2{
@@ -17,6 +18,9 @@ $menu-width: 150px ;
     overflow: hidden;
     position: absolute;
     left: 150px;
+    border-right: 1px solid #1E4A93;
+    top: 0;
+    transition: 0.5s;
 }
 
 .leftnav-container3{
@@ -26,11 +30,14 @@ $menu-width: 150px ;
     overflow: hidden;
     position: absolute;
     left: 300px;
+    border-right: 1px solid #1E4A93;
+    top: 0;
+    transition: 0.5s;
 }
 
-.leftnav-root-container:hover .leftnav-container{
+.expandmenu{
     width: $menu-width;
-    position: absolute;
+    transition: 0.5s;
 }
 
 .menu-item-box{

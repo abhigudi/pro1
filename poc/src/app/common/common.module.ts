@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import {TableModule} from 'primeng/table';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
+import { AppStateService } from 'src/app/common/services/app-state.service';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
     RouterModule,
     TableModule
   ],
+  providers: [AppStateService],
   declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ],
   exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ]
 })
