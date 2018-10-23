@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableHeader, TableRows } from 'src/app/common/interfaces/table';
+import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-page2',
@@ -8,7 +9,12 @@ import { TableHeader, TableRows } from 'src/app/common/interfaces/table';
 })
 export class Page2Component implements OnInit {
 
+  headerFC = new FormControl();
+  rowFG = new FormGroup({});
+  enableActions = false;
+
   header: TableHeader = [
+    {id:'0', label:'', input:{type:'checkbox', formControl:this.headerFC}, mappingKey: '_input', widthpx:50 },
     {id:'1', label:'Vin', mappingKey: 'vin'},
     {id:'2', label:'Year', mappingKey: 'year', sortable: true},
     {id:'3', label:'Brand', mappingKey: 'brand', sortable: true},
@@ -25,9 +31,26 @@ export class Page2Component implements OnInit {
     
   ];
 
-  constructor() { }
+  constructor() {
+    this.data.map(item=>{
+      this.rowFG.addControl(item.vin,new FormControl())
+      item['_input'] = this.rowFG.controls[item.vin];
+    })
+    console.log(this.data);
+   }
 
   ngOnInit() {
+    this.rowFG.valueChanges.subscribe(obj=>{
+      console.log(obj);
+      this.enableActions = false;
+      for(let key in obj){
+        if( obj[key] ){ this.enableActions = true; break; }
+      }
+    })
+
+    this.headerFC.valueChanges.subscribe(val=>{
+      console.log(val);
+    })
   }
 
 }

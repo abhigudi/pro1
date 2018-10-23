@@ -1,15 +1,16 @@
 export interface TableHeader {
     [index: number]: {
-        label: String,
+        label?: String,
         id: String,
         mappingKey: String,
         widthpx?: Number,
-        sortable?: boolean
+        sortable?: boolean,
+        input?: any
     }
 }
 
-export interface TableRows {
-    [index: number]: {
-        [key: string]: string
-    }
+interface TableRow {
+        [key: string]: any
 }
+
+export interface TableRows extends Array<TableRow>{}

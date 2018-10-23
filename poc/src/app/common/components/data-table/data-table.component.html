@@ -1,17 +1,30 @@
 
+
 <div class="page-padding">
 <p-table [value]="rows">
   <ng-template pTemplate="header">
       <tr>
-          <th *ngFor="let head of header" [pSortableColumn]="head.sortable? head.mappingKey:null">
-            {{head.label}}
+          <th *ngFor="let head of header" [pSortableColumn]="head.sortable? head.mappingKey:null" [style.width]="head.widthpx+'px'">
+            <span *ngIf="head.label">{{head.label}}</span>
+            <span *ngIf="head.input">
+                <span *ngIf="head.input.type=='checkbox'" >
+                    <input class="checkbox-size" type="checkbox" [formControl]="head.input.formControl">
+                    <!-- <p-checkbox [formControl]="head.input.formControl"></p-checkbox> -->
+                </span>
+            </span>
             <p-sortIcon *ngIf="head.sortable" [field]="head.mappingKey"></p-sortIcon>
           </th>
       </tr>
   </ng-template>
   <ng-template pTemplate="body" let-car>
       <tr>
-          <td *ngFor="let head of header">{{car[head.mappingKey]}}</td>
+          <td *ngFor="let head of header">
+              <span *ngIf="head.mappingKey!='_input'" >{{car[head.mappingKey]}}</span>
+              <span *ngIf="head.mappingKey=='_input'">
+                    <!-- <p-checkbox [formControl]="car[head.mappingKey]"></p-checkbox> -->
+                    <input class="checkbox-size" type="checkbox" [formControl]="car[head.mappingKey]">
+              </span>
+            </td>
       </tr>
   </ng-template>
 </p-table>

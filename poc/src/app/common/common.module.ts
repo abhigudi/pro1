@@ -8,12 +8,17 @@ import {TableModule} from 'primeng/table';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 import { AppStateService } from 'src/app/common/services/app-state.service';
+import {CheckboxModule} from 'primeng/checkbox';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    TableModule
+    TableModule,
+    CheckboxModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AppStateService],
   declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ],
