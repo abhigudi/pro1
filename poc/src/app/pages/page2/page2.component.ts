@@ -12,6 +12,7 @@ export class Page2Component implements OnInit {
   headerFC = new FormControl();
   rowFG = new FormGroup({});
   enableActions = false;
+  allSelected = false;
 
   header: TableHeader = [
     {id:'0', label:'', input:{type:'checkbox', formControl:this.headerFC}, mappingKey: '_input', widthpx:50 },
@@ -42,6 +43,12 @@ export class Page2Component implements OnInit {
   ngOnInit() {
     this.rowFG.valueChanges.subscribe(obj=>{
       console.log(obj);
+      for(let key in obj){
+        if(!obj[key]){this.allSelected=false; break;}
+        else{ this.allSelected = true; }
+      }
+      if(this.allSelected){ this.headerFC.setValue(true) }
+      else{ this.headerFC.setValue(false);}
       this.enableActions = false;
       for(let key in obj){
         if( obj[key] ){ this.enableActions = true; break; }
@@ -49,8 +56,20 @@ export class Page2Component implements OnInit {
     })
 
     this.headerFC.valueChanges.subscribe(val=>{
-      console.log(val);
+      console.log('val---',val,'allSelected----',this.allSelected);
+     if(val==true && this.allSelected==false ){
+       let obj = this.setallValueObj(this.rowFG.value,true);
+       this.rowFG.setValue(obj);
+     }
+     if(val==false && this.allSelected==true){
+      let obj = this.setallValueObj(this.rowFG.value,false);
+      this.rowFG.setValue(obj);
+     }
     })
   }
 
+  setallValueObj(obj,val){
+    for(let key in obj){ obj[key]=val; }
+    return obj;
+  }
 }
