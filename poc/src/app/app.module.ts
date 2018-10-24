@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModules } from 'src/app/common/common.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const route: Routes = [
   { path: 'page1', loadChildren: 'src/app/pages/page1/page1.module#Page1Module'},
@@ -18,7 +19,9 @@ const route: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(route, {useHash: true}),
-    CommonModules
+    CommonModules,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
