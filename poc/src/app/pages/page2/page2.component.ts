@@ -42,7 +42,6 @@ export class Page2Component implements OnInit {
 
   ngOnInit() {
     this.rowFG.valueChanges.subscribe(obj=>{
-      console.log(obj);
       for(let key in obj){
         if(!obj[key]){this.allSelected=false; break;}
         else{ this.allSelected = true; }
@@ -56,7 +55,6 @@ export class Page2Component implements OnInit {
     })
 
     this.headerFC.valueChanges.subscribe(val=>{
-      console.log('val---',val,'allSelected----',this.allSelected);
      if(val==true && this.allSelected==false ){
        let obj = this.setallValueObj(this.rowFG.value,true);
        this.rowFG.setValue(obj);
@@ -72,4 +70,16 @@ export class Page2Component implements OnInit {
     for(let key in obj){ obj[key]=val; }
     return obj;
   }
+
+  print(){
+    this.data.forEach(item=>{
+      let obj = this.rowFG.value;
+      for(let key in obj){
+        if( key==item.vin && obj[key] ){
+          console.log('-------Printing selected items-------',item);
+        }
+      }
+    })
+  }
+
 }

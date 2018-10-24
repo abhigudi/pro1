@@ -3,7 +3,7 @@
     <div [routerLink]="['/']" class="hand-cursor"> <i class="fas fa-home"></i> Home </div>
     <div *ngFor="let item of routeArr; let i = index" class="d-flex flex-row"> 
       <i class="fas fa-angle-double-right bc-righticon"></i>
-      <div class="hand-cursor" [routerLink]="generateLink(i)" >----{{generateLink(i)}} {{item}} </div>
+      <div class="hand-cursor" [routerLink]="generateLink(i)" >{{item}} </div>
     </div>
   </div>
 </div>
