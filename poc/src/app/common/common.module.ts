@@ -10,6 +10,7 @@ import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.compon
 import { AppStateService } from 'src/app/common/services/app-state.service';
 import {CheckboxModule} from 'primeng/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [AppStateService],
-  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ],
-  exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent ]
+  declarations: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent, PaginationComponent ],
+  exports: [ HeaderComponent, FooterComponent, LeftnavComponent, DataTableComponent, BreadCrumbComponent, PaginationComponent ]
 })
 export class CommonModules { }

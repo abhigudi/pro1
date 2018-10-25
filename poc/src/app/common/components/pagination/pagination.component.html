@@ -1,0 +1,30 @@
+<div class="d-flex pcp">
+    <div class="pdn" (click)="currentPage = 1">
+      <<
+    </div>
+    <div class="pdn" (click)="currentPage=currentPage-1">
+      <
+    </div> 
+  <ng-container *ngFor="let i of arr;">
+    <div class="pdn" *ngIf="currentPage<arr.length-5 && i==arr.length-2">
+      ...
+    </div>
+    <div 
+      class="pdn" 
+      *ngIf="i<3 || i>arr.length-2 || (i>2 && i<arr.length-2 && i>currentPage-3 && i<currentPage+3)  " 
+      (click)="currentPage=i"
+      [ngClass]="{'pdnh':currentPage==i}"
+    >
+      {{i}}
+    </div>
+    <div class="pdn" *ngIf="currentPage>5 && i==2">
+      ...
+    </div>
+  </ng-container>         
+  <div class="pdn" (click)="currentPage=currentPage+1">
+    >
+  </div>  
+  <div class="pdn" (click)="currentPage = arr.length">
+    >>
+  </div>  
+</div>
