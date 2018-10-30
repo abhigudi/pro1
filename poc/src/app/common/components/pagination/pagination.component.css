@@ -20,6 +20,7 @@
 
 .p-f{
     display: flex;
+    align-items: center;
 }
 
 .p-f>div{

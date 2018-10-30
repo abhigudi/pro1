@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, EventEmitter, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pagination',
@@ -26,14 +27,20 @@ export class PaginationComponent implements OnInit, OnChanges {
       //--------------new code-------------------
 
       @Input() length = 0;
-      @Input() perPage = 0;
+      // @Input() perPage = 0;
+      perPage = 5;
       @Output() selectedPageNo = new EventEmitter();
       lastPageNumber = 0;
       currentPage = 1;
       range = [];
+      pp = new FormControl(5);
       constructor() { }
     
       ngOnInit() {
+        this.pp.valueChanges.subscribe(d=>{
+          this.perPage=d;
+          this.ngOnChanges();
+        });
       }
     
       ngOnChanges(){
