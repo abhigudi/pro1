@@ -1,4 +1,4 @@
-
+/* 
 
 .pdn{
     margin: 2px;
@@ -15,4 +15,28 @@
 
 .pcp{
     padding: 10px;
+} */
+
+
+.p-f{
+    display: flex;
+}
+
+.p-f>div{
+    border: 1px solid black;
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.current-page{
+    background: greenyellow;
+}
+
+.disabled{
+    background: rgb(255, 122, 122);
 }

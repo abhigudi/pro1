@@ -1,4 +1,4 @@
-<div class="d-flex pcp">
+<!-- <div class="d-flex pcp">
     <div class="pdn" (click)="currentPage = 1">
       <<
     </div>
@@ -27,4 +27,57 @@
   <div class="pdn" (click)="currentPage = arr.length">
     >>
   </div>  
-</div>
+</div> -->
+
+
+<!-- ------new code------ -->
+
+
+<div *ngIf="lastPageNumber>1" class="p-f">
+
+  <!-- previous starts -->
+    <div >
+        <span (click)="prevPage()" [ngClass]="{ 'disabled' : currentPage == 1 }" >
+            <
+        </span>
+    </div>
+    <!-- previous ends -->
+  
+    <!-- first page starts -->
+    <div [ngClass]="{ 'current-page' : currentPage == 1 }"  (click)="pageNumberClicked(1)" >
+        <span>1</span>
+    </div>
+    <!-- first page ends -->
+  
+    <!-- ellips starts -->
+    <div  *ngIf="range[range.length-1]>6" (click)="leftEllips()">
+       <span>&hellip; </span>
+    </div>
+    <!-- ellips ends -->
+  
+    <!-- forloop starts -->
+    <div *ngFor="let item of range" [ngClass]="{ 'current-page' : currentPage == item }" (click)="pageNumberClicked(item)">
+        <span>{{item}}</span>
+    </div>
+    <!-- forloop ends -->
+  
+    <!-- ellips starts -->
+    <div *ngIf="range[0]<lastPageNumber-6" (click)="rightEllips()">
+        <span>&hellip;</span>
+    </div>
+    <!-- ellips ends -->
+  
+    <!-- last page number starts -->
+    <div  *ngIf="lastPageNumber>1" [ngClass]="{ 'current-page' : currentPage == lastPageNumber }"  (click)="pageNumberClicked(lastPageNumber)">
+        <span>{{lastPageNumber}}</span>
+    </div>
+    <!-- last page number ends -->
+  
+    <!-- next starts -->
+    <div >
+        <span (click)="nextPage()" [ngClass]="{ 'disabled' : currentPage == lastPageNumber }"> 
+            >
+        </span>
+    </div>
+    <!-- next ends -->
+  </div>
