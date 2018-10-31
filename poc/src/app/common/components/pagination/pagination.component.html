@@ -32,7 +32,7 @@
 
 <!-- ------new code------ -->
 
-
+{{currentPage}}
 <div *ngIf="lastPageNumber>1" class="p-f">
 
   <!-- previous starts -->
@@ -50,7 +50,7 @@
     <!-- first page ends -->
   
     <!-- ellips starts -->
-    <div  *ngIf="range[range.length-1]>6" (click)="leftEllips()">
+    <div  *ngIf="currentPage>4" (click)="leftEllips()">
        <span>&hellip; </span>
     </div>
     <!-- ellips ends -->
@@ -62,7 +62,7 @@
     <!-- forloop ends -->
   
     <!-- ellips starts -->
-    <div *ngIf="range[0]<lastPageNumber-6" (click)="rightEllips()">
+    <div *ngIf="(lastPageNumber-currentPage)>3" (click)="rightEllips()">
         <span>&hellip;</span>
     </div>
     <!-- ellips ends -->

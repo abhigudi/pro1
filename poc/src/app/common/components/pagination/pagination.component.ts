@@ -52,7 +52,7 @@ export class PaginationComponent implements OnInit, OnChanges {
 
         for(var i=2; i<this.lastPageNumber; i++){
           this.range.push(i)
-          if(i>3){
+          if(i>6){
             break;
           }
         } 
@@ -84,20 +84,17 @@ export class PaginationComponent implements OnInit, OnChanges {
         this.currentPage = n;
         this.range = [];
         let r = 2;
-        let start = 0;
-        let end = 0;
-        if(n-r <= 1){
+        let start = n-r;
+        let end = n+2;
+        if(n<5){
           start = 2;
-          end = ((r*2)+1);
+          end = this.lastPageNumber>=7? 7 : this.lastPageNumber;
         }
-        if(n+r >= this.lastPageNumber){
+        if( (this.lastPageNumber-n)<4 ){
+          start = this.lastPageNumber-6>0? this.lastPageNumber-6 : 2;
           end = this.lastPageNumber-1;
-          start = end - ((r*2)+1);
         }
-        if(n-r > 1 && n+r < this.lastPageNumber){
-          start = n-r;
-          end = n+r;
-        }
+        
         for(let i=start; i<=end; i++){
           this.range.push(i)
         }
