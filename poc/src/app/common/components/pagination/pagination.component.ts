@@ -88,7 +88,7 @@ export class PaginationComponent implements OnInit, OnChanges {
         let end = n+2;
         if(n<5){
           start = 2;
-          end = this.lastPageNumber>=7? 7 : this.lastPageNumber;
+          end = this.lastPageNumber>=7? 7 : this.lastPageNumber-1;
         }
         if( (this.lastPageNumber-n)<4 ){
           start = this.lastPageNumber-6>0? this.lastPageNumber-6 : 2;
